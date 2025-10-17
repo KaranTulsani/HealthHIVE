@@ -1,0 +1,154 @@
+/* --- Modern Results Display --- */
+
+.results-container {
+  max-width: 1600px;
+  margin: 2rem auto;
+  padding: 2rem 3rem;
+  background: var(--background-color, #f8fafc);
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Header */
+.results-header-card {
+  background: linear-gradient(145deg, #ffffff, #f3f4f6);
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  text-align: center;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.results-header-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color, #2563eb);
+}
+
+.results-header-card p {
+  margin-top: 0.3rem;
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.results-header-card .back-button {
+  background: transparent;
+  border: none;
+  color: var(--primary-color, #2563eb);
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+}
+
+/* Grid layout */
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  animation: fadeUp 0.7s ease;
+}
+
+/* Cards */
+.result-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb;
+  padding: 1.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.result-card h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-color, #2563eb);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Lists */
+.result-card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.result-card li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.result-card li strong {
+  color: #111827;
+}
+
+/* Staff & Resource Actions */
+.action-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.action-group {
+  background: #f9fafb;
+  border-left: 4px solid var(--primary-color, #2563eb);
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+}
+
+.action-group h5 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--primary-color, #2563eb);
+  font-weight: 600;
+}
+
+.action-group ul {
+  padding-left: 1rem;
+  list-style-type: disc;
+}
+
+.action-group li {
+  color: #374151;
+}
+
+/* Public Advisory */
+.advisory-text {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid #f59e0b;
+  border-radius: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .results-container {
+    padding: 1.5rem;
+  }
+}

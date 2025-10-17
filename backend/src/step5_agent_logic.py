@@ -384,11 +384,11 @@ def apply_scenario(critical: int, stable: int, scenario: str = "normal"):
         critical = int(round(critical * 2.0))
         stable = int(round(stable * 1.2))
     elif scenario == "outbreak":
-        critical = int(round(critical * 1.5))
-        stable = int(round(stable * 1.5))
-    elif scenario in ("festival", "festival crowd", "festival_crowd"):
-        critical = int(round(critical * 1.1))
+        critical = int(round(critical * 3.0))
         stable = int(round(stable * 3.0))
+    elif scenario in ("festival", "festival crowd", "festival_crowd"):
+        critical = int(round(critical * 1.2))
+        stable = int(round(stable * 1.4))
     # else: normal
     return critical, stable
 
