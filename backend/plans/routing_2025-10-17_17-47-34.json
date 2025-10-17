@@ -1,0 +1,94 @@
+{
+  "scenario": "festival",
+  "total_critical": 3,
+  "total_stable": 3,
+  "assignments": [
+    {
+      "hospital_id": "H1",
+      "hospital_name": "KEM Hospital",
+      "distance_km": 2.7637488178315297,
+      "travel_min": 5.527497635663059,
+      "pred_adm_next": 0.2722664721626511,
+      "pred_icu_next": 0.10847625942865712,
+      "pred_vent_next": 0.09357455790533382,
+      "capacity_score": 10.0,
+      "readiness_index": 0.6,
+      "total_score": 1.792702585131448,
+      "assigned_critical": 3,
+      "assigned_stable": 3,
+      "recommendation": {
+        "extra_doctors": 0,
+        "extra_specialists": 2,
+        "icu_short": 0,
+        "vent_short": 0,
+        "oxygen_cylinders": 2,
+        "blood_units": 7,
+        "trauma_kits": 5,
+        "urgency": "HIGH"
+      },
+      "assign_patients": 6
+    }
+  ],
+  "generated_at": "2025-10-17T17:47:34",
+  "incident_lat": 19.0117388,
+  "incident_lon": 72.8178706,
+  "action_plan": {
+    "incident_location": "Unknown Location",
+    "scenario": "Festival Crowd (Stable Spike)",
+    "summary": {
+      "incident_location": "Unknown Location",
+      "scenario": "Festival Crowd (Stable Spike)",
+      "total_patients": 6,
+      "total_critical": 3,
+      "total_stable": 3,
+      "hospitals_used": 1
+    },
+    "ambulance_dispatch": [
+      {
+        "hospital_id": "H1",
+        "hospital_name": "KEM Hospital",
+        "critical": 3,
+        "stable": 3,
+        "distance_km": 2.7637488178315297,
+        "travel_min": 5.527497635663059
+      }
+    ],
+    "hospital_alerts": [
+      {
+        "hospital_id": "H1",
+        "hospital_name": "KEM Hospital",
+        "message": "Notify KEM Hospital (H1) of incoming patients: 3 critical, 3 stable"
+      }
+    ],
+    "staff_actions": [
+      {
+        "hospital_id": "H1",
+        "hospital_name": "KEM Hospital",
+        "action": "Prepare ER teams at KEM Hospital (H1)"
+      },
+      {
+        "hospital_id": "H1",
+        "hospital_name": "KEM Hospital",
+        "action": "Mobilize +2 specialists to KEM Hospital"
+      },
+      {
+        "hospital_id": "H1",
+        "hospital_name": "KEM Hospital",
+        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at KEM Hospital"
+      },
+      {
+        "hospital_id": "H1",
+        "hospital_name": "KEM Hospital",
+        "action": "Urgency: HIGH — escalate to hospital command"
+      },
+      {
+        "hospital_id": "ALL",
+        "hospital_name": "ALL",
+        "action": "Set up temporary triage tents and crowd management"
+      }
+    ],
+    "public_advisory": "Festival surge expected. Use on-site first-aid booths for minor injuries and avoid crowded hospital lobbies.",
+    "generated_at": "2025-10-17T17:47:34",
+    "action_plan_generated_at": "2025-10-17T17:47:34"
+  }
+}

@@ -1,4 +1,5 @@
 {
+  "incident_location": "Worli",
   "scenario": "normal",
   "total_critical": 3,
   "total_stable": 6,
@@ -26,9 +27,7 @@
         "trauma_kits": 5,
         "urgency": "HIGH"
       },
-      "assign_patients": 7,
-      "lat": 19.0015631,
-      "lon": 72.8421717
+      "assign_patients": 7
     },
     {
       "hospital_id": "H4",
@@ -53,20 +52,14 @@
         "trauma_kits": 0,
         "urgency": "HIGH"
       },
-      "assign_patients": 2,
-      "lat": 19.0332238,
-      "lon": 72.8382311
+      "assign_patients": 2
     }
   ],
-  "generated_at": "2025-10-17T19:09:44",
-  "incident_lat": 19.0117388,
-  "incident_lon": 72.8178706,
+  "generated_at": "2025-10-17T17:15:55",
   "action_plan": {
-    "incident_location": "Unknown Location",
-    "scenario": "Normal Operation",
+    "incident_location": "Worli",
+    "scenario": "normal",
     "summary": {
-      "incident_location": "Unknown Location",
-      "scenario": "Normal Operation",
       "total_patients": 9,
       "total_critical": 3,
       "total_stable": 6,
@@ -145,7 +138,7 @@
       }
     ],
     "public_advisory": "Moderate surge expected. Minimize hospital visits if possible.",
-    "generated_at": "2025-10-17T19:09:44",
-    "action_plan_generated_at": "2025-10-17T19:09:48"
+    "generated_at": "2025-10-17T17:15:55",
+    "action_plan_generated_at": "2025-10-17T17:15:56"
   }
 }

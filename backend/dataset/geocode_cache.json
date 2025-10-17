@@ -1,0 +1,30 @@
+{
+  "Worli, Mumbai, India": {
+    "lat": 19.0117388,
+    "lon": 72.8178706
+  },
+  "worli, Mumbai, India": {
+    "lat": 19.0117388,
+    "lon": 72.8178706
+  },
+  "Bandra, Mumbai, India": {
+    "lat": 19.0549792,
+    "lon": 72.8402203
+  },
+  "thane, Mumbai, India": {
+    "lat": 19.1694801,
+    "lon": 72.9668404
+  },
+  "bandra, Mumbai, India": {
+    "lat": 19.0549792,
+    "lon": 72.8402203
+  },
+  "airoli, Mumbai, India": {
+    "lat": 19.1585147,
+    "lon": 72.9994019
+  },
+  "juhu, Mumbai, India": {
+    "lat": 19.1070215,
+    "lon": 72.8275275
+  }
+}

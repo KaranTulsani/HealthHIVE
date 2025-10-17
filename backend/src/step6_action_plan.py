@@ -1,4 +1,3 @@
-# src/step6_action_plan.py
 import json
 import os
 from datetime import datetime
@@ -42,9 +41,23 @@ def main():
     total_stable = int(routing.get("total_stable", 0) or 0)
     assignments = routing.get("assignments", [])
 
+    # Scenario mapping to fix frontend NaN issue
+    SCENARIO_MAP = {
+        "1": "Normal Operation",
+        "2": "Major Accident (Critical Spike)",
+        "3": "Disease Outbreak (Both Up)",
+        "4": "Festival Crowd (Stable Spike)",
+        "normal": "Normal Operation",
+        "accident": "Major Accident (Critical Spike)",
+        "outbreak": "Disease Outbreak (Both Up)",
+        "festival": "Festival Crowd (Stable Spike)"
+    }
+
+    scenario_name = SCENARIO_MAP.get(str(scenario).strip().lower(), "Unknown")
+
     # Print header
     total_patients = total_critical + total_stable
-    print(f"\n🚨 Incident at {incident_location} | Scenario: {scenario.capitalize()}")
+    print(f"\n🚨 Incident at {incident_location} | Scenario: {scenario_name}")
     print(f"Patients: {total_patients} total ({total_critical} critical, {total_stable} stable)\n")
 
     # Ambulance Dispatch (structured)
@@ -60,7 +73,6 @@ def main():
             distance_km = a.get("distance_km")
 
             line = f"   → {hid} - {crit} critical, {stab} stable"
-            # append distance/time if present
             extra = []
             if distance_km is not None:
                 try:
@@ -107,7 +119,7 @@ def main():
     else:
         print("   No hospitals to alert.")
 
-    # Staff Actions (hospital-specific + scenario-level)
+    # Staff Actions
     staff_actions = []
     print("\n👨‍⚕️ Staff Action:")
     if assignments:
@@ -120,16 +132,13 @@ def main():
             urgency = rec.get("urgency", "LOW")
             action_lines = []
 
-            # Always prepare ER teams
             action_lines.append(f"Prepare ER teams at {hosp_name} ({hid})")
 
-            # Add specialists/doctors if recommended
             if extra_docs > 0:
                 action_lines.append(f"Mobilize +{int(extra_docs)} doctors to {hosp_name}")
             if extra_specs > 0:
                 action_lines.append(f"Mobilize +{int(extra_specs)} specialists to {hosp_name}")
 
-            # ICU/ventilator shortfalls
             icu_short = rec.get("icu_short", 0)
             vent_short = rec.get("vent_short", 0)
             if icu_short and icu_short > 0:
@@ -137,7 +146,6 @@ def main():
             if vent_short and vent_short > 0:
                 action_lines.append(f"Ensure {int(vent_short)} ventilators available at {hosp_name}")
 
-            # Supplies suggested
             oxy = rec.get("oxygen_cylinders", 0)
             blood = rec.get("blood_units", 0)
             trauma = rec.get("trauma_kits", 0)
@@ -148,11 +156,9 @@ def main():
                 if trauma: supplies.append(f"{trauma} trauma kits")
                 action_lines.append(f"Prepare supplies: {', '.join(supplies)} at {hosp_name}")
 
-            # Add urgency-specific note
             if urgency and urgency.upper() in ("HIGH", "CRITICAL"):
                 action_lines.append(f"Urgency: {urgency.upper()} — escalate to hospital command")
 
-            # Print each action for this hospital and collect to staff_actions
             for act in action_lines:
                 print(f"   - {act}")
                 staff_actions.append({
@@ -163,7 +169,7 @@ def main():
     else:
         print("   No staff actions available.")
 
-    # Add scenario-specific staff actions (single lines)
+    # Scenario-specific staff actions
     scenario_lower = (scenario or "normal").strip().lower()
     if scenario_lower == "accident":
         extra = "Trauma & surgery units on standby"
@@ -183,11 +189,13 @@ def main():
     print("\n📢 PUBLIC ADVISORY:")
     print(f"   {public_advisory}")
 
-    # Build action_plan and attach to routing object
+    # ✅ FIXED PART BELOW
     routing["action_plan"] = {
         "incident_location": incident_location,
-        "scenario": scenario,
+        "scenario": scenario_name,
         "summary": {
+            "incident_location": incident_location,
+            "scenario": scenario_name,
             "total_patients": total_patients,
             "total_critical": total_critical,
             "total_stable": total_stable,
@@ -201,7 +209,6 @@ def main():
         "action_plan_generated_at": datetime.now().isoformat(timespec="seconds")
     }
 
-    # Save enriched routing JSON back to last_routing.json and timestamped file
     os.makedirs("plans", exist_ok=True)
     last_path = "plans/last_routing.json"
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")

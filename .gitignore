@@ -1,48 +1,27 @@
-# ===================================================================
-# Python / Backend
-# ===================================================================
+# ✅ Final .gitignore for full-stack push (safe & complete)
+# Keeps everything except heavy auto-generated folders
 
-# Virtual Environments
-/.venv
-/backend/.venv
+# Node dependencies
+frontend/node_modules/
 
-# Python cache files
-**/__pycache__/
+# Python virtual environment
+backend/venv/
 
-# Generated data and plans
-# Ignoring the whole output folder is cleaner
-/backend/output/
-/backend/dataset/geocode_cache.json
-
-
-# ===================================================================
-# Node.js / Frontend
-# ===================================================================
-
-# Dependencies
-/frontend/node_modules/
+# Logs and caches
+__pycache__/
+*.pyc
+*.pyo
+*.log
 
 # Build output
-/frontend/dist/
+dist/
+build/
 
-# Vite-specific cache
-/frontend/.vite/
+# Environment files - keep them!
+#! .env
+#! backend/.env
+#! frontend/.env
 
-# ESLint cache
-/frontend/.eslintcache
-
-
-# ===================================================================
-# General & IDE
-# ===================================================================
-
-# IDE-specific settings
-.vscode/
-
-# Environment variables (contains secret keys)
-.env*
-!/.env.example
-
-# macOS system files
+# System files
 .DS_Store
-```
+Thumbs.db

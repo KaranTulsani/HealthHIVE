@@ -1,4 +1,6 @@
 # step5_agent_logic.py
+from geopy.geocoders import Nominatim
+import time
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -7,6 +9,9 @@ import math
 import requests
 from datetime import datetime
 import os, json
+
+geolocator = Nominatim(user_agent="ai_emergency_load_balancer")
+
 from math import radians, sin, cos, sqrt, atan2
 # NOTE: if you created a requests-based geocode helper earlier, this file expects geocode_location to exist.
 # If you used geopy, keep that import and helper; otherwise keep your requests-based geocoder.
@@ -559,7 +564,10 @@ def main():
     scenario = scenario_map.get(choice, choice if choice in {"normal","accident","outbreak","festival"} else "normal")
 
     # Apply scenario scaling
-    scaled_crit, scaled_stable = apply_scenario(critical_patients, stable_patients, scenario)
+    # Disable scaling — use exact user-entered numbers
+    scaled_crit, scaled_stable = critical_patients, stable_patients
+    print(f"🧍 Using exact entered counts: {scaled_crit} critical, {scaled_stable} stable (Scenario: {scenario})")
+
 
     # ---- Geocode → travel minutes & distances mapping (preferred) ----
     incident_lat, incident_lon = geocode_location(incident_location)
@@ -617,21 +625,54 @@ def main():
     print("\n" + "="*80)
     print("📊 Hospital Scoring (lower is better):")
     print(scored.to_string(index=False))
-
     # ---- Save JSON for Step 6 ----
     os.makedirs("plans", exist_ok=True)
+
+    # ✅ Create output dictionary
     output = {
-        "incident_location": incident_location,
         "scenario": scenario,
         "total_critical": scaled_crit,
         "total_stable": scaled_stable,
         "assignments": routing.to_dict(orient="records"),
         "generated_at": datetime.now().isoformat(timespec="seconds"),
     }
-    with open("plans/last_routing.json", "w") as f:
-        json.dump(output, f, indent=2)
+
+    # ✅ Add coordinates if available for the incident
+    if incident_lat and incident_lon:
+        output["incident_lat"] = incident_lat
+        output["incident_lon"] = incident_lon
+
+    # ✅ Add coordinates for each hospital automatically using geopy
+    from geopy.geocoders import Nominatim
+    import time
+
+    print("🌍 Fetching coordinates for hospitals...")
+    geolocator = Nominatim(user_agent="ai_emergency_load_balancer")
+
+    # Add coordinates inside each hospital record
+    for hospital in output["assignments"]:
+        name = hospital.get("hospital_name") or ""
+        if not name.strip():
+            continue
+        try:
+            query = f"{name}, Mumbai, India"  # Add city context for accuracy
+            location = geolocator.geocode(query, timeout=10)
+            if location:
+                hospital["lat"] = location.latitude
+                hospital["lon"] = location.longitude
+                print(f"📍 {name}: ({location.latitude:.4f}, {location.longitude:.4f})")
+            else:
+                print(f"⚠️ Could not find coordinates for {name}")
+            time.sleep(1)  # Prevent rate-limit from Nominatim
+        except Exception as e:
+            print(f"⚠️ Geocoding failed for {name}: {e}")
+
+    # ✅ Save to JSON
+    with open("plans/last_routing.json", "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
 
     print("💾 Saved routing → plans/last_routing.json")
+
 
 if __name__ == "__main__":
     main()
