@@ -1,7 +1,7 @@
 {
   "incident_location": "Bandra",
   "scenario": "normal",
-  "total_critical": 26,
+  "total_critical": 40,
   "total_stable": 7,
   "assignments": [
     {
@@ -15,19 +15,19 @@
       "capacity_score": 10.0,
       "readiness_index": 0.6,
       "total_score": 1.0501554763974192,
-      "assigned_critical": 3,
-      "assigned_stable": 4,
+      "assigned_critical": 5,
+      "assigned_stable": 3,
       "recommendation": {
         "extra_doctors": 0,
-        "extra_specialists": 2,
+        "extra_specialists": 3,
         "icu_short": 0,
         "vent_short": 0,
-        "oxygen_cylinders": 2,
-        "blood_units": 7,
-        "trauma_kits": 5,
-        "urgency": "HIGH"
+        "oxygen_cylinders": 3,
+        "blood_units": 11,
+        "trauma_kits": 8,
+        "urgency": "CRITICAL"
       },
-      "assign_patients": 7
+      "assign_patients": 8
     },
     {
       "hospital_id": "H4",
@@ -40,19 +40,19 @@
       "capacity_score": 10.0,
       "readiness_index": 0.6,
       "total_score": 1.2879831250428926,
-      "assigned_critical": 3,
+      "assigned_critical": 5,
       "assigned_stable": 3,
       "recommendation": {
         "extra_doctors": 0,
-        "extra_specialists": 2,
+        "extra_specialists": 3,
         "icu_short": 0,
         "vent_short": 1,
-        "oxygen_cylinders": 2,
-        "blood_units": 7,
-        "trauma_kits": 5,
-        "urgency": "HIGH"
+        "oxygen_cylinders": 3,
+        "blood_units": 11,
+        "trauma_kits": 8,
+        "urgency": "CRITICAL"
       },
-      "assign_patients": 6
+      "assign_patients": 8
     },
     {
       "hospital_id": "H2",
@@ -66,7 +66,7 @@
       "readiness_index": 0.6,
       "total_score": 1.7096508051148498,
       "assigned_critical": 3,
-      "assigned_stable": 0,
+      "assigned_stable": 1,
       "recommendation": {
         "extra_doctors": 0,
         "extra_specialists": 2,
@@ -77,7 +77,7 @@
         "trauma_kits": 5,
         "urgency": "HIGH"
       },
-      "assign_patients": 3
+      "assign_patients": 4
     },
     {
       "hospital_id": "H5",
@@ -215,44 +215,119 @@
       "capacity_score": 10.0,
       "readiness_index": 0.6,
       "total_score": 6.0932869279539625,
-      "assigned_critical": 2,
+      "assigned_critical": 3,
       "assigned_stable": 0,
       "recommendation": {
         "extra_doctors": 0,
-        "extra_specialists": 1,
+        "extra_specialists": 2,
         "icu_short": 0,
         "vent_short": 1,
         "oxygen_cylinders": 2,
-        "blood_units": 5,
-        "trauma_kits": 3,
+        "blood_units": 7,
+        "trauma_kits": 5,
         "urgency": "HIGH"
       },
-      "assign_patients": 2
+      "assign_patients": 3
+    },
+    {
+      "hospital_id": "H8",
+      "hospital_name": "Bombay Hospital",
+      "distance_km": 12.413718382332963,
+      "travel_min": 24.827436764665926,
+      "pred_adm_next": 0.4646830436456144,
+      "pred_icu_next": 0.13235298200767073,
+      "pred_vent_next": 0.11819364784326523,
+      "capacity_score": 10.0,
+      "readiness_index": 0.6,
+      "total_score": 7.621167638128901,
+      "assigned_critical": 3,
+      "assigned_stable": 0,
+      "recommendation": {
+        "extra_doctors": 0,
+        "extra_specialists": 2,
+        "icu_short": 0,
+        "vent_short": 0,
+        "oxygen_cylinders": 2,
+        "blood_units": 7,
+        "trauma_kits": 5,
+        "urgency": "HIGH"
+      },
+      "assign_patients": 3
+    },
+    {
+      "hospital_id": "H10",
+      "hospital_name": "Fortis Hospital Mulund",
+      "distance_km": 17.231279971978644,
+      "travel_min": 34.46255994395729,
+      "pred_adm_next": 0.33688595288253975,
+      "pred_icu_next": 0.1799946647100766,
+      "pred_vent_next": 1.4062251232278027,
+      "capacity_score": 10.0,
+      "readiness_index": 0.6,
+      "total_score": 10.486145173763694,
+      "assigned_critical": 3,
+      "assigned_stable": 0,
+      "recommendation": {
+        "extra_doctors": 0,
+        "extra_specialists": 2,
+        "icu_short": 0,
+        "vent_short": 1,
+        "oxygen_cylinders": 2,
+        "blood_units": 7,
+        "trauma_kits": 5,
+        "urgency": "HIGH"
+      },
+      "assign_patients": 3
+    },
+    {
+      "hospital_id": "H12",
+      "hospital_name": "Wockhardt Hospital",
+      "distance_km": 25.33917171331853,
+      "travel_min": 50.67834342663706,
+      "pred_adm_next": 0.32098160579605234,
+      "pred_icu_next": 0.11154385659234092,
+      "pred_vent_next": 1.410509337159523,
+      "capacity_score": 10.0,
+      "readiness_index": 0.6,
+      "total_score": 15.347699349150329,
+      "assigned_critical": 3,
+      "assigned_stable": 0,
+      "recommendation": {
+        "extra_doctors": 0,
+        "extra_specialists": 2,
+        "icu_short": 0,
+        "vent_short": 1,
+        "oxygen_cylinders": 2,
+        "blood_units": 7,
+        "trauma_kits": 5,
+        "urgency": "HIGH"
+      },
+      "assign_patients": 3
     }
   ],
-  "generated_at": "2025-10-18T21:37:58",
+  "generated_at": "2025-10-18T19:55:40",
   "action_plan": {
     "incident_location": "Bandra",
     "scenario": "normal",
     "summary": {
-      "total_patients": 33,
-      "total_critical": 26,
+      "total_patients": 47,
+      "total_critical": 40,
       "total_stable": 7,
-      "hospitals_used": 9
+      "hospitals_used": 12
     },
     "ambulance_dispatch": [
       {
         "hospital_id": "H3",
         "hospital_name": "Lilavati Hospital",
-        "critical": 3,
-        "stable": 4,
+        "critical": 5,
+        "stable": 3,
         "distance_km": 1.127515831064466,
         "travel_min": 3.0
       },
       {
         "hospital_id": "H4",
         "hospital_name": "Hinduja Hospital",
-        "critical": 3,
+        "critical": 5,
         "stable": 3,
         "distance_km": 1.9018147073083873,
         "travel_min": 3.8036294146167746
@@ -261,7 +336,7 @@
         "hospital_id": "H2",
         "hospital_name": "Sion Hospital",
         "critical": 3,
-        "stable": 0,
+        "stable": 1,
         "distance_km": 2.593579653060824,
         "travel_min": 5.187159306121648
       },
@@ -308,27 +383,51 @@
       {
         "hospital_id": "H6",
         "hospital_name": "Breach Candy Hospital",
-        "critical": 2,
+        "critical": 3,
         "stable": 0,
         "distance_km": 9.926974143677775,
         "travel_min": 19.85394828735555
+      },
+      {
+        "hospital_id": "H8",
+        "hospital_name": "Bombay Hospital",
+        "critical": 3,
+        "stable": 0,
+        "distance_km": 12.413718382332963,
+        "travel_min": 24.827436764665926
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "critical": 3,
+        "stable": 0,
+        "distance_km": 17.231279971978644,
+        "travel_min": 34.46255994395729
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "critical": 3,
+        "stable": 0,
+        "distance_km": 25.33917171331853,
+        "travel_min": 50.67834342663706
       }
     ],
     "hospital_alerts": [
       {
         "hospital_id": "H3",
         "hospital_name": "Lilavati Hospital",
-        "message": "Notify Lilavati Hospital (H3) of incoming patients: 3 critical, 4 stable"
+        "message": "Notify Lilavati Hospital (H3) of incoming patients: 5 critical, 3 stable"
       },
       {
         "hospital_id": "H4",
         "hospital_name": "Hinduja Hospital",
-        "message": "Notify Hinduja Hospital (H4) of incoming patients: 3 critical, 3 stable"
+        "message": "Notify Hinduja Hospital (H4) of incoming patients: 5 critical, 3 stable"
       },
       {
         "hospital_id": "H2",
         "hospital_name": "Sion Hospital",
-        "message": "Notify Sion Hospital (H2) of incoming patients: 3 critical, 0 stable"
+        "message": "Notify Sion Hospital (H2) of incoming patients: 3 critical, 1 stable"
       },
       {
         "hospital_id": "H5",
@@ -358,7 +457,22 @@
       {
         "hospital_id": "H6",
         "hospital_name": "Breach Candy Hospital",
-        "message": "Notify Breach Candy Hospital (H6) of incoming patients: 2 critical, 0 stable"
+        "message": "Notify Breach Candy Hospital (H6) of incoming patients: 3 critical, 0 stable"
+      },
+      {
+        "hospital_id": "H8",
+        "hospital_name": "Bombay Hospital",
+        "message": "Notify Bombay Hospital (H8) of incoming patients: 3 critical, 0 stable"
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "message": "Notify Fortis Hospital Mulund (H10) of incoming patients: 3 critical, 0 stable"
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "message": "Notify Wockhardt Hospital (H12) of incoming patients: 3 critical, 0 stable"
       }
     ],
     "staff_actions": [
@@ -370,17 +484,17 @@
       {
         "hospital_id": "H3",
         "hospital_name": "Lilavati Hospital",
-        "action": "Mobilize +2 specialists to Lilavati Hospital"
+        "action": "Mobilize +3 specialists to Lilavati Hospital"
       },
       {
         "hospital_id": "H3",
         "hospital_name": "Lilavati Hospital",
-        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at Lilavati Hospital"
+        "action": "Prepare supplies: 3 O2 cylinders, 11 blood units, 8 trauma kits at Lilavati Hospital"
       },
       {
         "hospital_id": "H3",
         "hospital_name": "Lilavati Hospital",
-        "action": "Urgency: HIGH — escalate to hospital command"
+        "action": "Urgency: CRITICAL — escalate to hospital command"
       },
       {
         "hospital_id": "H4",
@@ -390,7 +504,7 @@
       {
         "hospital_id": "H4",
         "hospital_name": "Hinduja Hospital",
-        "action": "Mobilize +2 specialists to Hinduja Hospital"
+        "action": "Mobilize +3 specialists to Hinduja Hospital"
       },
       {
         "hospital_id": "H4",
@@ -400,12 +514,12 @@
       {
         "hospital_id": "H4",
         "hospital_name": "Hinduja Hospital",
-        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at Hinduja Hospital"
+        "action": "Prepare supplies: 3 O2 cylinders, 11 blood units, 8 trauma kits at Hinduja Hospital"
       },
       {
         "hospital_id": "H4",
         "hospital_name": "Hinduja Hospital",
-        "action": "Urgency: HIGH — escalate to hospital command"
+        "action": "Urgency: CRITICAL — escalate to hospital command"
       },
       {
         "hospital_id": "H2",
@@ -550,7 +664,7 @@
       {
         "hospital_id": "H6",
         "hospital_name": "Breach Candy Hospital",
-        "action": "Mobilize +1 specialists to Breach Candy Hospital"
+        "action": "Mobilize +2 specialists to Breach Candy Hospital"
       },
       {
         "hospital_id": "H6",
@@ -560,16 +674,86 @@
       {
         "hospital_id": "H6",
         "hospital_name": "Breach Candy Hospital",
-        "action": "Prepare supplies: 2 O2 cylinders, 5 blood units, 3 trauma kits at Breach Candy Hospital"
+        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at Breach Candy Hospital"
       },
       {
         "hospital_id": "H6",
         "hospital_name": "Breach Candy Hospital",
         "action": "Urgency: HIGH — escalate to hospital command"
+      },
+      {
+        "hospital_id": "H8",
+        "hospital_name": "Bombay Hospital",
+        "action": "Prepare ER teams at Bombay Hospital (H8)"
+      },
+      {
+        "hospital_id": "H8",
+        "hospital_name": "Bombay Hospital",
+        "action": "Mobilize +2 specialists to Bombay Hospital"
+      },
+      {
+        "hospital_id": "H8",
+        "hospital_name": "Bombay Hospital",
+        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at Bombay Hospital"
+      },
+      {
+        "hospital_id": "H8",
+        "hospital_name": "Bombay Hospital",
+        "action": "Urgency: HIGH — escalate to hospital command"
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "action": "Prepare ER teams at Fortis Hospital Mulund (H10)"
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "action": "Mobilize +2 specialists to Fortis Hospital Mulund"
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "action": "Ensure 1 ventilators available at Fortis Hospital Mulund"
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at Fortis Hospital Mulund"
+      },
+      {
+        "hospital_id": "H10",
+        "hospital_name": "Fortis Hospital Mulund",
+        "action": "Urgency: HIGH — escalate to hospital command"
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "action": "Prepare ER teams at Wockhardt Hospital (H12)"
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "action": "Mobilize +2 specialists to Wockhardt Hospital"
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "action": "Ensure 1 ventilators available at Wockhardt Hospital"
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "action": "Prepare supplies: 2 O2 cylinders, 7 blood units, 5 trauma kits at Wockhardt Hospital"
+      },
+      {
+        "hospital_id": "H12",
+        "hospital_name": "Wockhardt Hospital",
+        "action": "Urgency: HIGH — escalate to hospital command"
       }
     ],
     "public_advisory": "Moderate surge expected. Minimize hospital visits if possible.",
-    "generated_at": "2025-10-18T21:37:58",
-    "action_plan_generated_at": "2025-10-18T21:37:58"
+    "generated_at": "2025-10-18T19:55:40",
+    "action_plan_generated_at": "2025-10-18T19:55:41"
   }
 }
