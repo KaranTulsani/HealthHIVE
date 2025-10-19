@@ -1,4 +1,4 @@
-# 🚨 MumbaiHacks: AI Emergency Load Balancer for Urban Hospital Networks
+# 🚨 HealthHIVE: AI Emergency Load Balancer for Urban Hospital Networks
 
 An **intelligent agent** designed to optimize patient routing during **mass casualty incidents** in a city like **Mumbai**. This AI system predicts hospital strain and dynamically generates optimized dispatch plans — ensuring patients reach the *fastest available care*, not just the *closest hospital*.
 
