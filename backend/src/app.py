@@ -10,7 +10,11 @@ from .logic_controller import run_full_simulation
 
 # Initialize the Flask application
 app = Flask(__name__)
-CORS(app)
+# Allow requests from your Vercel app and local development server
+CORS(app, origins=[
+    "https://mumbai-hacks-mjfj.vercel.app", 
+    "http://localhost:5173"
+])
 
 # Configuration - Fixed to point to backend/plans/ (one level up from src/)
 # __file__ is api.py which is in backend/src/
