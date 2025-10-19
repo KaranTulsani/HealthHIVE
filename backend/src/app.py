@@ -11,8 +11,10 @@ from .logic_controller import run_full_simulation
 # Initialize the Flask application
 app = Flask(__name__)
 # Allow requests from your Vercel app and local development server
+# Allow requests from your Vercel app and local development server
 CORS(app, origins=[
-    "https://mumbai-hacks-mjfj.vercel.app", 
+    "https://mumbai-hacks-frfx.vercel.app", # <-- Add this new URL
+    "https://mumbai-hacks-mjfj.vercel.app", # The old one, just in case
     "http://localhost:5173"
 ])
 
