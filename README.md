@@ -1,129 +1,75 @@
-# MumbaiHacks
+# 🚨 MumbaiHacks: AI Emergency Load Balancer for Urban Hospital Networks
 
-🚀 AI Emergency Load Balancer for Urban Hospital Networks
+An **intelligent agent** designed to optimize patient routing during **mass casualty incidents** in a city like **Mumbai**. This AI system predicts hospital strain and dynamically generates optimized dispatch plans — ensuring patients reach the *fastest available care*, not just the *closest hospital*.
 
-An intelligent agent that optimizes patient routing during mass casualty incidents in a city like Mumbai. This project uses machine learning to predict hospital strain and an optimization algorithm to generate real-time dispatch plans, ensuring patients get to the fastest available care, not just the closest hospital.
-
-This project was developed for the MumbaiHacks hackathon.
-
--- Tip: Take a screenshot of your running app, upload it to a site like Imgur, and paste the link here --
-
-The Problem: Urban Overload During Emergencies
-
-During a mass casualty incident, the standard protocol of rushing all patients to the nearest hospital creates a critical bottleneck. The closest facility is overwhelmed, leading to dangerous wait times, while nearby hospitals remain underutilized. This lack of intelligent, city-wide coordination can delay critical care and lead to poorer patient outcomes.
-
-Our Solution: An Agentic AI Coordinator
-
-This project acts as an autonomous, intelligent emergency coordinator that operates on a Sense-Think-Act cycle:
-
-🧠 SENSE: The agent monitors real-time data from the entire hospital network, including bed occupancy, staff utilization, and specialty care availability.
-
-🤔 THINK: It uses an XGBoost model to predict future ER wait times and an optimization algorithm to calculate a "Time-to-Treatment" score for each hospital, balancing travel time with predicted wait time.
-
-🚑 ACT: Based on the scores, the agent issues direct commands: rerouting ambulances, alerting hospitals to prepare, and recommending resource allocation to prevent bottlenecks before they form.
-
-🛠️ Tech Stack
-
-Backend:
-
-Framework: Python, Flask
-
-Machine Learning: Scikit-learn, Pandas, NumPy
-
-Core Logic: Standard Python libraries (subprocess, json)
-
-Frontend:
-
-Framework: React.js
-
-Build Tool: Vite
-
-API Client: Axios
-
-Styling: CSS
-
-📂 Project Structure
-
-The project is organized into two main parts: the Python backend and the React frontend.
-
-.
-├── backend/
-│   ├── dataset/      # Training and hospital data
-│   ├── models/       # Trained ML model files
-│   ├── output/       # Generated plans and logs
-│   └── src/          # Main Python source code (Flask API, agent logic)
-└── frontend/
-    └── src/          # React components and application logic
+Developed for the **MumbaiHacks Hackathon** 🧠💡
 
 
-🏁 Getting Started: How to Run This Project Locally
+---
 
-Follow these instructions to get the project up and running on your machine.
+## 🌆 The Problem: Urban Overload During Emergencies
 
-Prerequisites
+During a large-scale emergency, the default approach of sending all patients to the nearest hospital creates a **critical bottleneck**:
 
-Python: Version 3.10 or newer.
+- The closest facility becomes **overwhelmed**, leading to long wait times.  
+- Nearby hospitals remain **underutilized**.  
+- The result: delayed critical care and **avoidable fatalities**.
 
-Node.js: Version 18 or newer (which includes npm).
-
-Git: For cloning the repository.
-
-1. Clone the Repository
-
-First, clone the project from GitHub to your local machine.
-
-git clone [https://github.com/KaranTulsani/MumbaiHacks.git](https://github.com/KaranTulsani/MumbaiHacks.git)
-cd MumbaiHacks
+Urban healthcare networks lack real-time, city-wide coordination — that’s where our **AI Emergency Load Balancer** comes in.
 
 
-2. Set Up the Backend (Python)
+---
 
-You'll need two separate terminal windows for this process.
+## 🤖 Our Solution: An Agentic AI Coordinator
 
-In your first terminal, navigate to the backend directory and set up the Python environment.
+The system functions as an **autonomous emergency coordinator** following a **Sense–Think–Act** cycle:
 
-# Navigate to the backend folder
-cd backend
+### 🧠 SENSE  
+Monitors real-time data from hospitals, including:
+- Bed occupancy  
+- Staff availability  
+- Specialty care units (e.g., trauma, burn, cardiac)
 
-# Create a Python virtual environment
-python -m venv .venv
+### 🤔 THINK  
+Predicts and plans using AI:
+- **XGBoost model** forecasts future ER wait times.  
+- An **optimization algorithm** computes a “Time-to-Treatment” score — balancing travel time with predicted waiting time.
 
-# Activate the virtual environment
-# On Windows:
-.\.venv\Scripts\activate
-# On macOS/Linux:
-# source .venv/bin/activate
-
-# Install the required Python packages
-pip install -r requirements.txt
-
-
-3. Set Up the Frontend (React)
-
-In your second terminal, navigate to the frontend directory and install the Node.js dependencies.
-
-# Navigate to the frontend folder
-cd frontend
-
-# Install the required npm packages
-npm install
+### 🚑 ACT  
+Executes dynamic routing and load balancing:
+- Suggests ambulance dispatch routes.  
+- Notifies hospitals in advance.  
+- Allocates resources to prevent system bottlenecks before they form.
 
 
-🚀 How to Run the Application
+---
 
-Now that both environments are set up, you can start the servers.
+## 🛠️ Tech Stack
 
-Start the Backend Server:
+### **Backend**
+- **Framework:** Python (Flask)  
+- **Machine Learning:** Scikit-learn, Pandas, NumPy, XGBoost  
+- **Core Logic:** Standard Python libraries (subprocess, json)
 
-In your first terminal (the one in the backend directory with the virtual environment active), run the Flask application.
+### **Frontend**
+- **Framework:** React.js  
+- **Build Tool:** Vite  
+- **API Client:** Axios  
+- **Styling:** CSS
 
-python src/app.py
+---
 
+## 🔗 Project Link
 
-The server will start and be running at http://127.0.0.1:5000. Keep this terminal open.
+🌐 **Live Demo:** https://mumbai-hacks-five.vercel.app
 
-Start the Frontend Server:
+---
 
-In your second terminal (the one in the frontend directory), run the React development server.
+## 👥 Team & Acknowledgments
 
-npm run dev
+Developed by the **Data Dabbawalas Team-Karan Tulsani,Ved Dange,Dhananjay Yadav,Nimish Tilwani** 
+Special thanks to the hackathon organizers and mentors for guidance and support.
+
+---
+
+> ⚙️ *AI that saves lives — optimizing emergency response, one decision at a time.*
