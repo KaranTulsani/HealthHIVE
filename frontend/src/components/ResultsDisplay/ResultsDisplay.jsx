@@ -63,12 +63,9 @@ const ResultsDisplay = ({ data, error, isLoading, onGoBack, onGoHome }) => {
   const staff_actions = action_plan.staff_actions || [];
   const public_advisory = action_plan.public_advisory || "";
   const groupedStaffActions = groupActionsByHospital(staff_actions);
-<<<<<<< HEAD
   
   // --- NEW: Get the decision rationale data safely ---
   const decision_rationale = action_plan.decision_rationale || [];
-=======
->>>>>>> 3cf55562be907eaaadacc9cdd5e452193458e4e6
 
   return (
     <>
@@ -90,7 +87,6 @@ const ResultsDisplay = ({ data, error, isLoading, onGoBack, onGoHome }) => {
           </p>
         </div>
 
-<<<<<<< HEAD
         {/* --- NEW: Decision Rationale Card --- */}
         {decision_rationale.length > 0 && (
           <div className="result-card full-width rationale-card">
@@ -109,8 +105,6 @@ const ResultsDisplay = ({ data, error, isLoading, onGoBack, onGoHome }) => {
           </div>
         )}
 
-=======
->>>>>>> 3cf55562be907eaaadacc9cdd5e452193458e4e6
         {/* Dispatch & Alerts */}
         <div className="results-grid">
           <div className="result-card">
@@ -205,8 +199,4 @@ const ResultsDisplay = ({ data, error, isLoading, onGoBack, onGoHome }) => {
   );
 };
 
-<<<<<<< HEAD
 export default ResultsDisplay;
-=======
-export default ResultsDisplay;
->>>>>>> 3cf55562be907eaaadacc9cdd5e452193458e4e6
