@@ -22,6 +22,7 @@ const AnimatedRoutes = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  
   useEffect(() => {
     // Check if the API_URL is defined. If not, we know it's a build issue.
     if (!API_URL) {
