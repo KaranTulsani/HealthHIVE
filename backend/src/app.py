@@ -6,7 +6,7 @@ import traceback
 from datetime import datetime
 
 # Import the main controller function
-from logic_controller import run_full_simulation
+from .logic_controller import run_full_simulation
 
 # Initialize the Flask application
 app = Flask(__name__)
