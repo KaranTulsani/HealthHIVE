@@ -65,6 +65,15 @@ Executes dynamic routing and load balancing:
 
 ---
 
+## **ScreenShots**
+<img width="531" height="521" alt="Screenshot 2025-10-19 222645" src="https://github.com/user-attachments/assets/879b6ea7-60e4-4b5b-9246-999836bcf304" />
+<img width="1919" height="1007" alt="Screenshot 2025-10-19 220950" src="https://github.com/user-attachments/assets/cb9899fe-10c5-4712-aee0-edc0562ecad6" />
+<img width="1914" height="997" alt="Screenshot 2025-10-19 221049" src="https://github.com/user-attachments/assets/3e372aac-f53e-4af4-ad15-46554b51d26d" />
+<img width="1919" height="1003" alt="Screenshot 2025-10-19 221131" src="https://github.com/user-attachments/assets/5077ee85-3ea7-4f8c-9e1a-23f67a7449ee" />
+<img width="1907" height="976" alt="image" src="https://github.com/user-attachments/assets/32ef97ba-0a77-47c0-a108-7ba6cb636c15" />
+<img width="1909" height="1002" alt="image" src="https://github.com/user-attachments/assets/1979e310-d947-4c0b-abfc-c8f62b8efe96" />
+
+---
 ## 👥 Team & Acknowledgments
 
 Developed by the **Data Dabbawalas Team-Karan Tulsani,Ved Dange,Dhananjay Yadav,Nimish Tilwani** 
