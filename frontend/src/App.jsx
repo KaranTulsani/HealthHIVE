@@ -8,23 +8,34 @@ import './App.css';
 import LandingPage from './components/LandingPage/LandingPage.jsx';
 import IncidentForm from './components/IncidentForm/IncidentForm.jsx';
 import ResultsDisplay from './components/ResultsDisplay/ResultsDisplay.jsx';
-// FIX: Removed the HospitalPortal import as it's no longer used.
 
-const API_URL = 'http://127.0.0.1:5000';
+// --- THIS IS THE FIX ---
+// Use the environment variable for the API URL
+const API_URL = import.meta.env.VITE_API_URL;
 
 // Container for animated routes
 const AnimatedRoutes = () => {
   const [planData, setPlanData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [systemStatus, setSystemStatus] = useState('operational');
+  const [systemStatus, setSystemStatus] = useState('offline'); // Default to offline
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    axios.get(`${API_URL}/health`, { timeout: 3000 })
+    // Check if the API_URL is defined. If not, we know it's a build issue.
+    if (!API_URL) {
+      console.error("VITE_API_URL is not defined! Make sure it's set in your .env file or Vercel settings.");
+      setSystemStatus('offline');
+      return;
+    }
+    
+    axios.get(`${API_URL}/health`, { timeout: 10000 }) // Increased timeout for waking up server
       .then(() => setSystemStatus('operational'))
-      .catch(() => setSystemStatus('offline'));
+      .catch((err) => {
+        console.error("Health check failed:", err);
+        setSystemStatus('offline');
+      });
   }, []);
 
   const handleGeneratePlan = async (formData) => {
@@ -34,13 +45,13 @@ const AnimatedRoutes = () => {
     navigate('/results'); // Navigate immediately to show the loading state
 
     try {
-      const response = await axios.post(`${API_URL}/generate-plan`, formData, { timeout: 30000 });
+      const response = await axios.post(`${API_URL}/generate-plan`, formData, { timeout: 60000 }); // Longer timeout for plan generation
       setPlanData(response.data);
     } catch (err) {
       let errorMessage = 'Failed to generate plan. ';
-      if (err.code === 'ECONNABORTED') errorMessage += 'Request timeout.';
+      if (err.code === 'ECONNABORTED') errorMessage += 'The request timed out. The server might be waking up or busy.';
       else if (err.response) errorMessage += `Server error (${err.response.status}): ${err.response.data?.error || err.response.statusText}`;
-      else if (err.request) errorMessage += 'Cannot connect to the backend server. Please ensure it is running.';
+      else if (err.request) errorMessage += 'Cannot connect to the backend server.';
       else errorMessage += `An unknown error occurred: ${err.message}`;
       setError(errorMessage);
     } finally {
@@ -88,12 +99,11 @@ const AnimatedRoutes = () => {
             </motion.div>
           } 
         />
-        {/* FIX: Removed the route for the Hospital Portal. */}
         <Route path="*" element={
           <motion.div className="page-container" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-             <h1>404 - Page Not Found</h1>
-             <p>Oops! The page you're looking for doesn't exist.</p>
-             <button className="primary-button" onClick={() => navigate('/')}>Go to Home</button>
+              <h1>404 - Page Not Found</h1>
+              <p>Oops! The page you're looking for doesn't exist.</p>
+              <button className="primary-button" onClick={() => navigate('/')}>Go to Home</button>
           </motion.div>
         } />
       </Routes>
@@ -110,4 +120,3 @@ function App() {
 }
 
 export default App;
-
