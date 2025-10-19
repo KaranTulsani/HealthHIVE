@@ -14,6 +14,7 @@ app = Flask(__name__)
 # Allow requests from your Vercel app and local development server
 CORS(app, origins=[
     "https://mumbai-hacks-five.vercel.app",
+    "https://mumbai-hacks-karantulsanis-projects.vercel.app"
     "http://localhost:5173"
 ])
 
